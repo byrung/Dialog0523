@@ -15,11 +15,11 @@ class MainActivity : AppCompatActivity() {
 
         btnDialog.setOnClickListener {
             var placesArr = arrayOf("에펠", "프로방스", "피렌세")
+            var selectArr = booleanArrayOf(false, true, false)
             var dialog = AlertDialog.Builder(this@MainActivity)
-            dialog.setTitle("안내")
-            dialog.setMessage("오늘 목")
+            dialog.setTitle("좋플레이스")
             dialog.setIcon(R.drawable.Log)
-            dialog.setItems(placesArr){
+            dialog.setSingleChoiceItems(placesArr, 1){ d1, which ->
                 btnDialog.text = placesArr[which]
             }
             dialog.setPositiveButton("닫기", null)
